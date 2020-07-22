@@ -17,7 +17,7 @@ fn main() {
     let builder = Server::bind(&addr);
     let server = builder.serve(|| {
         service_fn_ok(|_| {
-            Response::new(Body::from("Rust Microservice"))
+            Response::new(Body::from("Rust Microservice FTW!!!!!!!!!!!!!!1111"))
         })
     });
     let server = server.map_err(drop);
