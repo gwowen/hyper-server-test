@@ -5,11 +5,15 @@ use hyper::{Body, Response, Server};
 use hyper::rt::Future;
 use hyper::service::service_fn_ok;
 
+// So far, so very basic, just runs and serves
+// text that says "Rust Microservices"
+// on localhost
+
 fn main() {
-    // So far, so very basic, just runs and serves
-    // text that says "Rust Microservices"
-    // on localhost
-    let addr = ([127, 0, 0, 1], 8080).into();
+    // wee fiddle required here to get the 
+    // it running in Docker, use 0.0.0.0:8080
+    // instead of 127.0.0.1 - won't bind if you use that
+    let addr = ([0, 0, 0, 0], 8000).into();
     let builder = Server::bind(&addr);
     let server = builder.serve(|| {
         service_fn_ok(|_| {
