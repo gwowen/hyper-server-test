@@ -11,7 +11,7 @@ use hyper::service::service_fn_ok;
 
 fn main() {
     // wee fiddle required here to get the 
-    // it running in Docker, use 0.0.0.0:8080
+    // it running in Docker, use 0.0.0.0:8000
     // instead of 127.0.0.1 - won't bind if you use that
     let addr = ([0, 0, 0, 0], 8000).into();
     let builder = Server::bind(&addr);
